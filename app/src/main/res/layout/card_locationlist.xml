@@ -5,30 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
-    android:layout_margin="20dp">
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#EADAFB"
         android:orientation="horizontal"
-        android:padding="20dp"
-        android:background="#EADAFB">
+        android:padding="10dp">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:padding="5dp"
-            android:src="@drawable/baseline_person_24"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|start"
             android:background="@drawable/round_button_background"
-            android:layout_gravity="center_vertical|start"/>
+            android:padding="5dp"
+            android:src="@drawable/baseline_person_24" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="center|center_vertical"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_gravity="center|center_vertical">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txt_name"
@@ -36,38 +37,41 @@
                 android:layout_height="wrap_content"
                 android:text="Patel Vansh"
                 android:textColor="#323232"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_mobno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="+91 84011 38433"/>
+                android:text="+91 84011 38433"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/txt_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="vanshkpatel21@gnu.ac.in"
-                android:textStyle="bold"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/txt_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="85 Heritage, kansa N.A, Visnagar"
-                android:textStyle="bold"/>
+                android:text="Suryadeep Residency Nikol Naroda Road Ahmedabad-382350"
+                android:textSize="14sp"
+                android:minLines="1"
+                android:maxLines="2"
+                android:ellipsize="end" />
         </LinearLayout>
 
         <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/baseline_location_24"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|end"
             android:background="@drawable/round_button_background"
             android:backgroundTint="#6200EE"
-            android:layout_gravity="center_vertical|right"/>
+            android:src="@drawable/baseline_location_24" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
