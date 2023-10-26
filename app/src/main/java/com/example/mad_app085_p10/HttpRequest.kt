@@ -40,8 +40,8 @@ class HttpRequest {
                 val sb = StringBuilder()
                 var line: String? = null
             try{
-                while(reader.readLine().also { line = it } != null{
-                        sb.append(Line).append('\n')
+                while(reader.readLine().also { line = it } != null){
+                        sb.append(line).append('\n')
                     }
             }catch (e: Exception) {
         Log.i(TAG, "Converted to String: $line")
