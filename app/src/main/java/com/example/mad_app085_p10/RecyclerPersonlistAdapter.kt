@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mad_app085_p10.databinding.ActivityMainBinding
 import java.io.Serializable
 
 class RecyclerPersonlistAdapter: RecyclerView.Adapter<RecyclerPersonlistAdapter.ViewHolder> {
     private var context: Context
-    private var arr_records = ArrayList<LocationlistCardModel>()
-    constructor(context: Context, arr_records: ArrayList<LocationlistCardModel>){
+    private var arr_records = ArrayList<PersonListCardModel>()
+    constructor(context: Context, arr_records: ArrayList<PersonListCardModel>){
         this.context = context
         this.arr_records = arr_records
     }
@@ -33,8 +32,8 @@ class RecyclerPersonlistAdapter: RecyclerView.Adapter<RecyclerPersonlistAdapter.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.txt_name.text = arr_records[position].name
-        holder.txt_email.text = arr_records[position].email
-        holder.txt_mobno.text = arr_records[position].mobno
+        holder.txt_email.text = arr_records[position].emailld
+        holder.txt_mobno.text = arr_records[position].phoneNo
         holder.txt_address.text = arr_records[position].address
 
         val obj = this as Serializable

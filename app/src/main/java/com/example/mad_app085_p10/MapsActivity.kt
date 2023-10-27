@@ -22,11 +22,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val obj = intent.getSerializableExtra("object") as Person
+        val obj = intent.getSerializableExtra("object") as PersonListCardModel
         Log.i(TAG,"Object: $obj")
-        var lat = obj.Latitude
-        var log = obj.Longitude
-        title = obj.Name
+        var lat = obj.latitude
+        var log = obj.longitude
+        title = obj.address
 
 
         binding = ActivityMapsBinding.inflate(layoutInflater)

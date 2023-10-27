@@ -3,15 +3,15 @@ package com.example.mad_app085_p10
 import org.json.JSONObject
 import java.io.Serializable
 
-class Person(
-    jsonObject: JSONObject,
-    var id:String,
-    var name: String,
-    var emailld: String,
-    var phoneNo: String,
-    var address: String,
-    var latitude: Double,
-    var longitude:Double): Serializable {
+class PersonListCardModel(
+    jsonObject: JSONObject): Serializable {
+    var id:String
+    var name: String
+    var emailld: String
+    var phoneNo: String
+    var address: String
+    var latitude: Double
+    var longitude:Double
 
     init {
         id = jsonObject.getString("id")
