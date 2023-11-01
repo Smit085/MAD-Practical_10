@@ -1,35 +1,31 @@
-JG.repeat (5, 10, {
-id: JG.objectId(),email() {
-  return (
-
-__.snakeCase(this.profile.name) +
-
-'@gnu.ac.in'
-
-).toLowerCase();
-
-},
-  phone(){
-    return '+91' +`${JG. integer(5, 9)}${JG.integer(0, 9)}${JG.integer(0, 9)}${JG.integer(0, 9)}${JG. integer(0, 9)}${JG.integer(0, 9)}${JG.integer(0, 9)}${JG.integer(0, 9)}${JG.integer(0, 9)}${JG.integer(0, 9)}`;
-
-},
-
-profile: {
-
-name: ${JG.firstName()} ${JG.lastName()}`,
-
-address: `${JG.integer(1, 100)} ${JG.street()}, ${JG.city()},
-
-${JG.state()},
-
-location: {
-
-lat: JG.floating(10, 30, 6), long: JG.floating(70, 90, 6),
-
-Generated Link https://api.isone Cokidata
-
-},
-
-},
-
+JG.repeat(7, 10, {
+  id: JG.objectId(),
+  email() {
+    return (
+      _.snakeCase(this.profile.name) +
+      '@' +
+      this.profile.company +
+      JG.domainZone()
+    ).toLowerCase();
+  },
+  username() {
+    return (_.words(this.profile.name)[0] + moment(this.profile.dob).format('YY')).toLowerCase();
+  },
+  profile: {
+    name: `${JG.firstName()} ${JG.lastName()}`,
+    company: JG.company(),
+    dob: moment(JG.date(new Date(1988, 0, 1), new Date(1995, 0, 1))).format('YYYY-MM-DD'),
+    address: `${JG.integer(1, 100)} ${JG.street()}, ${JG.city()}, ${JG.state()}`,
+    location: {
+      lat: JG.floating(-90, 90, 6),
+      long: JG.floating(-180, 180, 6),
+    },
+    about: JG.loremIpsum({ units: 'sentences', count: 2 }),
+  },
+  apiKey: JG.guid(),
+  roles: _.uniq(JG.repeat(2, JG.random('owner', 'admin', 'member', 'guest'))),
+  createdAt: JG.date(new Date(2010, 0, 1), new Date(2015, 0, 1)),
+  updatedAt() {
+    return moment(this.createdAt).add(1, 'days');
+  },
 });
