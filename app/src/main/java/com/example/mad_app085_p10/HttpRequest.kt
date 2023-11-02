@@ -19,7 +19,7 @@ class HttpRequest {
             val url = URL(reqUrl)
             val conn = url.openConnection() as HttpURLConnection
             if (token != null) {
-                conn.setRequestProperty("Authorization", "Bearer: $token")
+                conn.setRequestProperty("Authorization", "Bearer $token")
                 conn.setRequestProperty("Content-Type", "application/json")
             }
             conn.requestMethod = "GET"
@@ -54,6 +54,6 @@ class HttpRequest {
                 e.printStackTrace()
             }
         }
-        return line
+        return sb.toString()
     }
 }

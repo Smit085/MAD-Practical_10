@@ -18,14 +18,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.txtTitle.setOnClickListener {
+        binding.fab.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    val data = HttpRequest().makeServiceCall("https://api.json-generator.com/templates/qjeKFdjkXCdK/data","rbn0rerl1k0d3mcwgw7dva2xuwk780z1hxvyvrb1")
+                    val data = HttpRequest().makeServiceCall(
+                        "https://api.json-generator.com/templates/EQ-I7-g55etR/data",
+                        "c6v0zd5hcrtbhztoqfq22836w3buikp5fzusw92c")
                     withContext(Dispatchers.Main) {
                         try {
-                            if(data != null)
-                                runOnUiThread{getPersonDetailsFromJson(data.toString())}
+                            if(data != null){
+                                getPersonDetailsFromJson(data)
+                            }
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
